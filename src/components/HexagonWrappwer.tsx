@@ -21,7 +21,7 @@ interface HexagonWrapperProps {
 const HexagonWrapper: React.FC<HexagonWrapperProps> = (props) => {
   return (
     <span
-      className={`hexagon--${props.state} hexagon grid-x`}
+      className={`hexagon--${props.state} hexagon grid-x-center`}
       onClick={props.onClick}
     >
       <LineSvg />

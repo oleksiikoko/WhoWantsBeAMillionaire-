@@ -1,8 +1,9 @@
 import React from "react";
 
-import HeaxagonWrappwer, { HexagonWrapperState } from "./HeaxagonWrappwer";
+import HeaxagonWrappwer, { HexagonWrapperState } from "./HexagonWrappwer";
 import Button, { ButtonState } from "./Button";
 import StartGame from "../pages/StartGame";
+import Options from "../components/Options";
 
 import "../styles/index.css";
 
@@ -26,7 +27,8 @@ export default function App({ name }: AppProps) {
         onClick={() => {}}
       />
       <Button name="Button" onClick={() => {}} state={ButtonState.inactive} /> */}
-      <StartGame />
+      {/* <StartGame /> */}
+      <Options />
     </>
   );
 }

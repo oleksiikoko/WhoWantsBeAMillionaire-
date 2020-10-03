@@ -3,14 +3,28 @@
 }
 
 body {
-  /* height: 100cv; */
+  height: 100vh;
+  width: 100vw;
   padding: 0;
   margin: 0;
+}
+#container {
+  height: 100%;
+  width: 100%;
 }
 
 .grid-x-center {
   display: flex;
   align-items: center;
+}
+
+.grid-x-start {
+  display: flex;
+  align-items: flex-start;
+}
+.grid-x-end {
+  display: flex;
+  align-items: flex-end;
 }
 
 .grid-y-center {
