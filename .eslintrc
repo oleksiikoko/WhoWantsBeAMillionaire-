@@ -15,7 +15,8 @@
     "react/jsx-filename-extension": 0,
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/no-var-requires": 0
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/quotes": [2, "prefer-double"]
   },
   "settings": {
     "import/parsers": {
@@ -28,7 +29,5 @@
     }
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "@typescript-eslint/eslint-plugin"
-  ]
+  "plugins": ["@typescript-eslint/eslint-plugin"]
 }

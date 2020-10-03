@@ -1,0 +1,29 @@
+@import "var.css";
+
+.button {
+  width: 296px;
+  height: 64px;
+  border-radius: 12px;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+
+.button:hover {
+  background-color: var(--orange-80);
+}
+
+.button--inactive {
+  background-color: var(--orange-100);
+}
+
+.button--pressed {
+  background-color: var(--orange-120);
+}
+
+.button p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23.2px;
+  color: var(--white-100);
+}

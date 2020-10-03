@@ -1,0 +1,49 @@
+@import "var.css";
+
+.hexagon {
+  width: 405px;
+  height: 72px;
+  position: relative;
+  width: min-content;
+  cursor: pointer;
+}
+
+.hexagon:hover svg path {
+  stroke: var(--orange-100);
+}
+
+.hexagon svg:nth-child(1) {
+  height: 2px;
+  width: 10px;
+}
+
+.hexagon svg:nth-child(2) {
+  height: 100%;
+}
+
+.hexagon svg:nth-child(3) {
+  height: 2px;
+  width: 10px;
+}
+
+.hexagon--selected svg path {
+  fill: var(--orange-5);
+  stroke: var(--orange-100);
+}
+
+.hexagon--correct svg path {
+  fill: var(--green-5);
+  stroke: var(--green-100);
+}
+
+.hexagon--wrong svg path {
+  fill: var(--red-5);
+  stroke: var(--red-100);
+}
+
+.hexagon__content {
+  position: absolute;
+  top: 50%;
+  left: 18%;
+  transform: translate(-50%, -50%);
+}

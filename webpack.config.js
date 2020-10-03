@@ -1,32 +1,44 @@
-const path = require('path');
-const webpack = require('webpack');
+const path = require("path");
+const webpack = require("webpack");
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   watch: true,
-  entry: ['./src/index.tsx'],
-  devtool: 'inline-source-map',
+  entry: ["./src/index.tsx"],
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ["babel-loader"],
       },
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      // {
+      //   test: /\.svg$/,
+      //   loader: "svg-inline-loader",
+      // },
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
     path: `${__dirname}/public`,
-    publicPath: '/',
-    filename: 'app.js',
+    publicPath: "/",
+    filename: "app.js",
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -34,7 +46,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
+    contentBase: path.resolve(__dirname, "public"),
     liveReload: true,
     port: 9000,
     historyApiFallback: true,
