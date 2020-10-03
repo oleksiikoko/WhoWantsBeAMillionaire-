@@ -16,7 +16,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = (props) => {
   return (
     <span
-      className={`button button--${props.state} grid-x`}
+      className={`button button--${props.state} grid-x-center`}
       onClick={props.onClick}
     >
       <p>{props.name}</p>

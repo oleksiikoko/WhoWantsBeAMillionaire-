@@ -2,7 +2,25 @@
   font-family: "Inter", sans-serif;
 }
 
-.grid-x {
+body {
+  /* height: 100cv; */
+  padding: 0;
+  margin: 0;
+}
+
+.grid-x-center {
   display: flex;
   align-items: center;
+}
+
+.grid-y-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-y-start {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
