@@ -15,7 +15,7 @@ export enum HexagonWrapperState {
 interface HexagonWrapperProps {
   contentChild: React.FunctionComponent;
   state: HexagonWrapperState;
-  onClick(): void;
+  onClick?(): void;
 }
 
 const HexagonWrapper: React.FC<HexagonWrapperProps> = (props) => {

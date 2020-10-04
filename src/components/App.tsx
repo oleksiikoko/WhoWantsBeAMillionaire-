@@ -4,6 +4,8 @@ import HeaxagonWrappwer, { HexagonWrapperState } from "./HexagonWrappwer";
 import Button, { ButtonState } from "./Button";
 import StartGame from "../pages/StartGame";
 import Options from "../components/Options";
+import QuestionCard from "../components/QuestionCard";
+import MenuGame from "../components/MenuGame";
 
 import "../styles/index.css";
 
@@ -21,14 +23,17 @@ const content = () => <div>falsdkjfa</div>;
 export default function App({ name }: AppProps) {
   return (
     <>
-      {/* <HeaxagonWrappwer
+      <div className="game-container">
+        {/* <HeaxagonWrappwer
         contentChild={content}
         state={HexagonWrapperState.correct}
         onClick={() => {}}
       />
       <Button name="Button" onClick={() => {}} state={ButtonState.inactive} /> */}
-      {/* <StartGame /> */}
-      <Options />
+        {/* <StartGame /> */}
+        <QuestionCard />
+        <MenuGame />
+      </div>
     </>
   );
 }

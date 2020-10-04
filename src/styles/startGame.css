@@ -2,7 +2,6 @@
 
 .start-game {
   height: 100vh;
-  background-color: #013a6b;
   background-image: linear-gradient(
     to bottom right,
     var(--white-100) 50%,

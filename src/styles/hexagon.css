@@ -12,17 +12,17 @@
 }
 
 .hexagon svg:nth-child(1) {
-  height: 2px;
-  width: 10%;
+  height: 0.3rem;
+  width: 1rem;
 }
 
 .hexagon svg:nth-child(2) {
-  height: 100%;
+  height: 5rem;
 }
 
 .hexagon svg:nth-child(3) {
-  height: 2px;
-  width: 10%;
+  height: 0.3rem;
+  width: 1rem;
 }
 
 .hexagon--selected svg path {

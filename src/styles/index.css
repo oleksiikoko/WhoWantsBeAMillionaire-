@@ -38,3 +38,14 @@ body {
   flex-direction: column;
   align-items: flex-start;
 }
+
+.grid-y-scatter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-container {
+  height: 100%;
+  display: flex;
+}

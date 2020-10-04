@@ -1,7 +1,10 @@
+/* @import "var.css"; */
+
 .options {
   display: flex;
   flex-wrap: wrap;
-  height: 30%;
+  /* height: 30%; */
+  height: 20rem;
 }
 
 .options span {
@@ -18,3 +21,21 @@
 }
 
 /* .options .hexagon  */
+
+@media screen and (max-width: 600px) {
+  .options {
+    /* height: 30rem; */
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .options span {
+    width: 100%;
+
+    flex: auto;
+  }
+
+  .options span:nth-child(odd) {
+    flex: auto;
+  }
+}

@@ -1,0 +1,56 @@
+@import "var.css";
+
+.menu-game {
+  position: relative;
+  width: 40rem;
+  background-color: var(--white-100);
+  justify-content: center;
+}
+
+.menu-game > span {
+  top: 1.5rem;
+  right: 1.5rem;
+  position: absolute;
+  /* display: none; */
+}
+
+.menu-game ul {
+  width: 100%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-game li {
+  padding: 0;
+  margin: 0;
+
+  height: 3rem;
+
+  margin: 0.3rem 0;
+}
+
+.menu-game .hexagon {
+  /* width: 100%; */
+}
+
+.menu-game .hexagon svg:nth-child(1) {
+  height: 0.3rem;
+  width: 9.615rem;
+}
+
+.menu-game .hexagon svg:nth-child(2) {
+  height: 2.4rem;
+}
+
+.menu-game .hexagon svg:nth-child(3) {
+  height: 0.3rem;
+  width: 9.615rem;
+}
+
+.menu-game .hexagon__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
