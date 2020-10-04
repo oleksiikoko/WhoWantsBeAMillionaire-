@@ -1,0 +1,20 @@
+.game-over {
+  width: 100%;
+}
+
+.game-over .game-info {
+  background-color: var(--gray-90);
+}
+
+.game-over__score p {
+  padding: 0;
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  opacity: 0.5;
+}
+.game-over__score h1 {
+  padding: 0;
+  margin: 0;
+  font-size: 4rem;
+}

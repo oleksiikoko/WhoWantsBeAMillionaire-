@@ -1,0 +1,87 @@
+@import "var.css";
+
+.game-info {
+  height: 100vh;
+  width: 100%;
+}
+
+.game-info h1 {
+  font-size: 3rem;
+  max-width: 500px;
+}
+
+.game-info section {
+  min-width: 50%;
+  position: relative;
+  display: flex;
+}
+
+.hand svg:first-child {
+  position: absolute;
+  top: -10%;
+  width: 65%;
+  animation: height-size 1.7s 1;
+  z-index: 9;
+}
+
+.hand svg:nth-child(2) {
+  width: 45%;
+  animation: height-size 1s 1;
+  z-index: 10;
+}
+
+@keyframes height-size {
+  0% {
+    max-width: 30%;
+  }
+
+  100% {
+    max-width: 65%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .game-info {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .game-info section {
+    width: 100%;
+    height: 50%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .game-info h1 {
+    font-size: 3rem;
+    max-width: 90%;
+  }
+
+  .hand svg:first-child {
+    width: 85%;
+    top: 10%;
+    animation: height-size-mobile 1.7s 1;
+    z-index: 9;
+  }
+
+  .hand svg:nth-child(2) {
+    width: 60%;
+    animation: height-size-mobile 1s 1;
+    z-index: 10;
+  }
+
+  @keyframes height-size-mobile {
+    0% {
+      max-width: 50%;
+    }
+
+    100% {
+      max-width: 85%;
+    }
+  }
+}

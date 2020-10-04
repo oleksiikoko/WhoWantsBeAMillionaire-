@@ -6,6 +6,7 @@ import StartGame from "../pages/StartGame";
 import Options from "../components/Options";
 import QuestionCard from "../components/QuestionCard";
 import MenuGame from "../components/MenuGame";
+import GameOver from "../pages/GameOver";
 
 import "../styles/index.css";
 
@@ -31,8 +32,9 @@ export default function App({ name }: AppProps) {
       />
       <Button name="Button" onClick={() => {}} state={ButtonState.inactive} /> */}
         {/* <StartGame /> */}
-        <QuestionCard />
-        <MenuGame />
+        <GameOver />
+        {/* <QuestionCard />
+        <MenuGame /> */}
       </div>
     </>
   );
