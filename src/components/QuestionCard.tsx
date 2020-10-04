@@ -6,15 +6,24 @@ import MenuSvg from "../assets/svg/menu.svg";
 
 import "../styles/questionsCard.css";
 
-const QuestionCard = () => {
+interface QuestionCardProps {
+  question: {
+    text: string;
+    answers: Array<{
+      text: string;
+      truthy: boolean;
+    }>;
+    price: number;
+  };
+}
+
+const QuestionCard: React.FC<QuestionCardProps> = (props) => {
   return (
     <div className="question-card grid-y-scatter">
       <span onClick={console.log}>
         <MenuSvg />
       </span>
-      <h1>
-        How old your elder brother was 10 years before you was born, mate?
-      </h1>
+      <h1>{props.question.text}</h1>
       <Options />
     </div>
   );

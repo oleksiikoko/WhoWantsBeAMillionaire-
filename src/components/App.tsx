@@ -7,6 +7,7 @@ import Options from "../components/Options";
 import QuestionCard from "../components/QuestionCard";
 import MenuGame from "../components/MenuGame";
 import GameOver from "../pages/GameOver";
+import Game from "../pages/Game";
 
 import "../styles/index.css";
 
@@ -19,8 +20,6 @@ type ContainerProps = {
   margin?: string | 0;
 };
 
-const content = () => <div>falsdkjfa</div>;
-
 export default function App({ name }: AppProps) {
   return (
     <>
@@ -32,9 +31,10 @@ export default function App({ name }: AppProps) {
       />
       <Button name="Button" onClick={() => {}} state={ButtonState.inactive} /> */}
         {/* <StartGame /> */}
-        <GameOver />
+        {/* <GameOver /> */}
         {/* <QuestionCard />
         <MenuGame /> */}
+        <Game />
       </div>
     </>
   );
