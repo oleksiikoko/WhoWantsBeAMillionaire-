@@ -1,3 +1,3 @@
-test("CheckboxWithLabel changes the text after click", () => {
+test("Test Test", () => {
   expect(1).not.toEqual("On");
 });
