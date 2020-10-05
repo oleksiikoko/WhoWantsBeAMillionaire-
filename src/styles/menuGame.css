@@ -1,9 +1,16 @@
 @import "var.css";
 
+#menu-game {
+  height: 100%;
+}
+
 .menu-game {
-  position: relative;
-  width: 40rem;
+  /* width: 40rem; */
+  height: 100%;
   background-color: var(--white-100);
+
+  height: 100%;
+  position: relative;
   justify-content: center;
 }
 
@@ -11,7 +18,14 @@
   top: 1.5rem;
   right: 1.5rem;
   position: absolute;
-  /* display: none; */
+  display: none;
+}
+
+.menu-game > span {
+  top: 1.5rem;
+  right: 1.5rem;
+  position: absolute;
+  cursor: pointer;
 }
 
 .menu-game ul {
@@ -53,4 +67,23 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 600px) {
+  .menu-game {
+    display: none;
+    /* display: block; */
+  }
+
+  .menu-game--show {
+    display: block;
+  }
+
+  .menu-game--hide {
+    display: none;
+  }
+
+  .menu-game > span {
+    display: block;
+  }
 }

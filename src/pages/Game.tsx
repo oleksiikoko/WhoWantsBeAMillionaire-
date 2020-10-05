@@ -9,6 +9,8 @@ import MenuGame from "../components/MenuGame";
 
 import QuestionInterface from "../interfaces/Question";
 
+import "../styles/game.css";
+
 interface GameProps {
   questions: Array<QuestionInterface>;
   updateScore(concatValue: number): void;
