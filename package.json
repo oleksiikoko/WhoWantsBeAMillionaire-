@@ -8,9 +8,13 @@
     "@babel/preset-react": "7.0.0",
     "@babel/runtime": "7.5.0",
     "@svgr/webpack": "^5.4.0",
+    "@types/enzyme": "^3.10.7",
+    "@types/jest": "^26.0.14",
     "babel-eslint": "9.0.0",
     "babel-loader": "8.0.4",
+    "cross-env": "^7.0.2",
     "css-loader": "^4.3.0",
+    "enzyme": "^3.11.0",
     "eslint": "5.16.0",
     "eslint-config-airbnb": "17.1.1",
     "eslint-config-prettier": "4.3.0",
@@ -22,10 +26,14 @@
     "eslint-plugin-react": "7.18.0",
     "eslint-plugin-react-hooks": "1.7.0",
     "file-loader": "^6.1.0",
+    "husky": "^4.3.0",
+    "jest": "^26.5.0",
     "prettier": "1.19.1",
+    "react-test-renderer": "^16.13.1",
     "regenerator-runtime": "0.13.2",
     "svg-inline-loader": "^0.8.2",
     "terser-webpack-plugin": "1.2.3",
+    "ts-jest": "^26.4.1",
     "ts-loader": "6.2.1",
     "typescript": "3.7.5",
     "webpack": "4.41.6",
@@ -50,5 +58,21 @@
     "build": "webpack --config ./webpack.prod.js --mode production",
     "dev": "webpack-dev-server --host 0.0.0.0",
     "watch": "webpack --config ./webpack.config.js --mode development"
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "jest"
+    }
   }
 }
