@@ -4,6 +4,7 @@
   position: relative;
   width: min-content;
   justify-content: center;
+  margin: 0;
 }
 
 .hexagon svg:nth-child(1) {
@@ -75,4 +76,55 @@
   position: absolute;
   top: 2.72rem;
   left: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .hexagon svg:nth-child(1) {
+    height: 0.3rem;
+    width: 1rem;
+  }
+  .hexagon svg:nth-child(2) {
+    height: 7rem;
+  }
+  .hexagon svg:nth-child(3) {
+    height: 0.3rem;
+    width: 1rem;
+  }
+
+  .hexagon__content {
+    position: absolute;
+    top: 1.7rem;
+    left: 5.1rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .hexagon svg:nth-child(2) {
+    height: 4.5rem;
+  }
+
+  .hexagon__content {
+    top: 0.6rem;
+    left: 3.4rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .hexagon svg:nth-child(2) {
+    height: 3rem;
+  }
+
+  .hexagon__content {
+    top: 0.8rem;
+    left: 5.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1440px) {
+}
+
+@media screen and (min-width: 2560px) {
 }

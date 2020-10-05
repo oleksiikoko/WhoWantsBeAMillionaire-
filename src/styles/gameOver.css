@@ -11,10 +11,97 @@
   margin: 0;
   font-size: 2rem;
   font-weight: 600;
+  text-align: left;
   opacity: 0.5;
 }
 .game-over__score h1 {
   padding: 0;
   margin: 0;
   font-size: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .game-over__score {
+    margin-top: 4rem;
+    margin-bottom: 7rem;
+  }
+  .game-over__score p {
+    padding-bottom: 0.7rem;
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .game-over__score h1 {
+    padding-bottom: 1.5rem;
+    max-width: 30rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .game-over__score {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+  .game-over__score p {
+    padding-bottom: 0.7rem;
+    margin: 0;
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  .game-over__score h1 {
+    padding-bottom: 1rem;
+    max-width: 20rem;
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .game-over__score {
+    margin-top: 4rem;
+  }
+  .game-over__score p {
+    padding-bottom: 0.7rem;
+    font-size: 1.6rem;
+  }
+  .game-over__score h1 {
+    padding-bottom: 1rem;
+    font-size: 2.7rem;
+    max-width: 20rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .game-over__score p {
+    padding-bottom: 0.7rem;
+    margin: 0;
+    font-size: 2rem;
+  }
+  .game-over__score h1 {
+    padding-bottom: 1.5rem;
+    font-size: 3rem;
+    max-width: 30rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .game-over__score p {
+    padding-bottom: 0.7rem;
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  .game-over__score h1 {
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .game-over__score p {
+    padding-bottom: 1rem;
+    font-size: 4rem;
+    opacity: 0.5;
+  }
+  .game-over__score h1 {
+    font-size: 6rem;
+    padding-bottom: 3rem;
+  }
 }

@@ -30,20 +30,44 @@
 
 /* .options .hexagon  */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .options {
-    /* height: 30rem; */
     flex-direction: column;
     flex-wrap: nowrap;
+    margin-top: 9rem;
   }
-
   .options span {
-    width: 100%;
-
+    width: 40rem;
     flex: auto;
   }
-
   .options span:nth-child(odd) {
     flex: auto;
   }
+}
+
+@media screen and (max-width: 425px) {
+  .options {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-top: 7rem;
+  }
+  .options span {
+    width: 24rem;
+    flex: auto;
+  }
+  .options span:nth-child(odd) {
+    flex: auto;
+  }
+}
+
+@media screen and (max-width: 320px) {
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1440px) {
+}
+
+@media screen and (min-width: 2560px) {
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-import GameInfoWrapper from "../wrappers/GameInfoWrapper";
+import GameInfoWrapper from "../containers/GameInfoWrapper";
 
 import "../styles/startGame.css";
 

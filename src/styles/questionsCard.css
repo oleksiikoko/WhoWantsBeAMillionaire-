@@ -3,52 +3,112 @@
 }
 
 .question-card {
-  /* height: 60%;
-  margin: 10%; */
   position: relative;
-  padding: 0 7%;
-  height: 100%;
-  justify-content: space-around !important;
+  padding: 3rem;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
   background-color: var(--gray-90);
-  z-index: 10;
 }
 
+/* menu icon */
 .question-card > span {
   top: 1.5rem;
   right: 1.5rem;
   position: absolute;
   display: none;
 }
-
+.question-card span svg {
+  height: 2rem;
+}
+/* ------------ */
 .question-card > h1 {
   font-weight: 600;
-  font-size: 32px;
-  max-width: 90%;
+  font-size: 2rem;
+  max-width: 49rem;
+  text-align: left;
 }
 
-@media screen and (max-width: 600px) {
-  .question-card {
-    justify-content: center !important;
-  }
-  .question-card > span {
-    display: block;
-  }
-
+@media screen and (max-width: 768px) {
   .question-card > h1 {
     margin-bottom: 3.5rem;
-    max-width: 100%;
+    max-width: 36rem;
+    font-size: 2rem;
     text-align: center;
   }
 
+  /* for menu button */
   .question-card--show {
     display: block;
   }
-
   .question-card--hide {
     display: none;
   }
-
   .question-card > span {
     display: block;
   }
+  /* ---------------- */
+  /* menu icon */
+  .question-card > span {
+    top: 3rem;
+    right: 3rem;
+  }
+  .question-card span svg {
+    height: 2.5rem;
+  }
+  /* ------------ */
+}
+
+@media screen and (max-width: 425px) {
+  .question-card {
+    padding: 0;
+    width: 100vw;
+  }
+  .question-card > h1 {
+    margin-bottom: 3.5rem;
+    max-width: 24rem;
+    font-size: 2rem;
+  }
+
+  /* menu icon */
+  .question-card > span {
+    top: 2rem;
+    right: 2rem;
+  }
+  .question-card span svg {
+    height: 2.5rem;
+  }
+  /* ------------ */
+}
+
+@media screen and (max-width: 320px) {
+  .question-card {
+    padding: 0;
+    width: 100vw;
+  }
+  .question-card > h1 {
+    margin-bottom: 2rem;
+    max-width: 17rem;
+    font-size: 1.4rem;
+  }
+
+  /* menu icon */
+  .question-card > span {
+    top: 1rem;
+    right: 1rem;
+  }
+  .question-card span svg {
+    height: 1.7rem;
+  }
+  /* ------------ */
+}
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 1440px) {
+}
+
+@media screen and (min-width: 2560px) {
 }

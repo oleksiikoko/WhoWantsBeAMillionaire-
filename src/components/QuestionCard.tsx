@@ -27,7 +27,7 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
   };
   return (
     <div id="question-card">
-      <div className="question-card  grid-y-scatter">
+      <div className="question-card  grid-y-center">
         <span onClick={onShowMenu}>
           <MenuSvg />
         </span>

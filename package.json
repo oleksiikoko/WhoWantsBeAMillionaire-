@@ -48,7 +48,7 @@
   },
   "scripts": {
     "build": "webpack --config ./webpack.prod.js --mode production",
-    "dev": "webpack-dev-server",
+    "dev": "webpack-dev-server --host 0.0.0.0",
     "watch": "webpack --config ./webpack.config.js --mode development"
   }
 }

@@ -150,7 +150,7 @@ enum GamePage {
 }
 
 export default function App({ name }: AppProps) {
-  const [gameState, setGameState] = useState(GamePage.game);
+  const [gameState, setGameState] = useState(GamePage.over);
   const [gameScore, setGameScore] = useState(0);
 
   const startGame = () => {

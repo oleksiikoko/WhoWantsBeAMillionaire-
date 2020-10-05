@@ -2,12 +2,7 @@
 
 .game-info {
   height: 100vh;
-  width: 100%;
-}
-
-.game-info h1 {
-  font-size: 3rem;
-  max-width: 500px;
+  width: 100vw;
 }
 
 .game-info section {
@@ -18,7 +13,7 @@
 
 .hand svg:first-child {
   position: absolute;
-  top: -10%;
+  top: 0.3rem;
   width: 65%;
   animation: height-size 1.7s 1;
   z-index: 9;
@@ -27,61 +22,157 @@
 .hand svg:nth-child(2) {
   width: 45%;
   animation: height-size 1s 1;
+
   z-index: 10;
 }
 
-@keyframes height-size {
-  0% {
-    max-width: 30%;
-  }
+.game-info h1 {
+  font-size: 3rem;
+  max-width: 30rem;
 
-  100% {
-    max-width: 65%;
-  }
+  margin-bottom: 4rem;
 }
 
-@media screen and (max-width: 600px) {
+.game-info .button {
+  width: 20rem;
+  height: 3.9rem;
+}
+
+@media screen and (max-width: 768px) {
   .game-info {
     flex-direction: column;
     text-align: center;
     justify-content: center;
   }
 
+  .game-info .grid-y-start {
+    align-items: center !important;
+  }
+
   .game-info section {
     width: 100%;
-    height: 50%;
-    position: relative;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+  }
+  .hand {
+    padding-top: 3rem;
   }
 
   .game-info h1 {
-    font-size: 3rem;
-    max-width: 90%;
+    font-size: 4rem;
+    max-width: 40rem;
   }
 
   .hand svg:first-child {
-    width: 85%;
-    top: 10%;
-    animation: height-size-mobile 1.7s 1;
-    z-index: 9;
+    width: 36rem;
+    top: 1.9rem;
   }
 
   .hand svg:nth-child(2) {
-    width: 60%;
-    animation: height-size-mobile 1s 1;
-    z-index: 10;
+    width: 24rem;
   }
 
-  @keyframes height-size-mobile {
-    0% {
-      max-width: 50%;
-    }
+  .game-info .button {
+    width: 35rem;
+    height: 5rem;
+    margin-top: 4rem;
+  }
+}
 
-    100% {
-      max-width: 85%;
-    }
+@media screen and (max-width: 425px) {
+  .hand {
+    padding-top: 4rem;
+  }
+
+  .game-info h1 {
+    font-size: 2rem;
+    max-width: 16rem;
+    margin-top: 2rem;
+  }
+
+  .hand svg:first-child {
+    width: 18rem;
+    top: 3rem;
+  }
+
+  .hand svg:nth-child(2) {
+    width: 12rem;
+  }
+
+  .game-info .button {
+    width: 20rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .hand {
+    padding-top: 4rem;
+  }
+
+  .game-info h1 {
+    font-size: 1.6rem;
+    max-width: 13rem;
+    margin-top: 2rem;
+  }
+
+  .hand svg:first-child {
+    width: 16rem;
+    top: 4rem;
+  }
+
+  .hand svg:nth-child(2) {
+    width: 11.5rem;
+  }
+
+  .game-info .button {
+    width: 16rem;
+    height: 2.6rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .game-info h1 {
+    font-size: 2.2rem;
+    max-width: 18rem;
+  }
+
+  .game-info .button {
+    width: 17rem;
+    height: 3rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .game-info h1 {
+    font-size: 3rem;
+    max-width: 26rem;
+  }
+
+  .game-info .button {
+    height: 4rem;
+    width: 22rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .game-info h1 {
+    font-size: 6rem;
+    max-width: 50rem;
+    margin-top: 0;
+  }
+
+  .game-info .button {
+    width: 33rem;
+    height: 6rem;
+    margin-top: 1rem;
+  }
+}
+
+@keyframes height-size {
+  0% {
+    max-width: 0;
+  }
+
+  100% {
+    max-width: 100%;
   }
 }
