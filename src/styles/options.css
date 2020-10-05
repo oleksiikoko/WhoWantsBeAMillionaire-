@@ -7,6 +7,10 @@
   height: 20rem;
 }
 
+.options--inactive .hexagon--inactive:hover svg path {
+  stroke: var(--balck-40);
+}
+
 .options span {
   width: 50%;
   margin: 10px 0;
@@ -18,6 +22,10 @@
 
 .options span:nth-child(odd) {
   flex: 0 0 50%;
+}
+
+.options--inactive .hexagon--inactive:hover svg path {
+  stroke: var(--black-40);
 }
 
 /* .options .hexagon  */

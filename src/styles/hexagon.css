@@ -3,12 +3,7 @@
 .hexagon {
   position: relative;
   width: min-content;
-  cursor: pointer;
   justify-content: center;
-}
-
-.hexagon:hover svg path {
-  stroke: var(--orange-100);
 }
 
 .hexagon svg:nth-child(1) {
@@ -23,6 +18,18 @@
 .hexagon svg:nth-child(3) {
   height: 0.3rem;
   width: 1rem;
+}
+
+.hexagon--inactive:hover {
+  cursor: pointer;
+}
+
+.hexagon--inactive:hover svg path {
+  stroke: var(--orange-100);
+}
+
+.hexagon--disabled {
+  cursor: default;
 }
 
 .hexagon--selected svg path {
@@ -40,9 +47,32 @@
   stroke: var(--red-100);
 }
 
+.hexagon--completed svg path {
+  stroke: var(--black-40);
+}
+
+.hexagon--completed {
+  color: var(--black-40);
+}
+
+.hexagon--current svg path {
+  stroke: var(--orange-100);
+}
+
+.hexagon--current {
+  color: var(--orange-100);
+}
+
+/* .hexagon--uncompleted svg path {
+  stroke: var(--black-100);
+} */
+
+.hexagon--uncompleted {
+  color: var(--black-100);
+}
+
 .hexagon__content {
   position: absolute;
-  top: 50%;
-  left: 28%;
-  transform: translate(-50%, -50%);
+  top: 2.72rem;
+  left: 4rem;
 }

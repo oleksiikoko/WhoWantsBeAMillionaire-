@@ -2,24 +2,35 @@ import React from "react";
 
 import GameInfoWrapper from "../wrappers/GameInfoWrapper";
 
+import numberWithCommas from "../utils/numberWithCommas";
+
 import "../styles/gameOver.css";
 
-const GameScore = () => {
+interface GameScoreProps {
+  total: number;
+}
+
+const GameScore: React.FC<GameScoreProps> = (props) => {
   return (
     <div className="game-over__score">
       <p>Total score:</p>
-      <h1>$8,000 earned</h1>
+      <h1>${numberWithCommas(props.total)} earned</h1>
     </div>
   );
 };
 
-const GameOver = () => {
+interface GameOverProps {
+  score: number;
+  onStartGame(): void;
+}
+
+const GameOver: React.FC<GameOverProps> = (props) => {
   return (
     <div className="game-over">
       <GameInfoWrapper
-        screenInfo={() => <GameScore />}
+        screenInfo={() => <GameScore total={props.score} />}
         buttonName="Try again"
-        onButtonClick={console.log}
+        onButtonClick={props.onStartGame}
       />
     </div>
   );

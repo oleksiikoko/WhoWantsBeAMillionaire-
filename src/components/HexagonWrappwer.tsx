@@ -10,6 +10,10 @@ export enum HexagonWrapperState {
   selected = "selected",
   correct = "correct",
   wrong = "wrong",
+  disabled = "disabled",
+  completed = "completed",
+  uncompleted = "uncompleted",
+  current = "current",
 }
 
 interface HexagonWrapperProps {

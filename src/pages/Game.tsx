@@ -1,138 +1,55 @@
 import React, { useState } from "react";
 
+import HexagonWrapper, {
+  HexagonWrapperState,
+} from "../components/HexagonWrappwer";
+
 import QuestionsCard from "../components/QuestionCard";
 import MenuGame from "../components/MenuGame";
 
-const questions = [
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 500,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 1000,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 2000,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 4000,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 8000,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 16000,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 32000,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 64000,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 125000,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 250000,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 500000,
-  },
-  {
-    text: "In the UK, the abbreviation NHS stands for National what Service?",
-    answers: [
-      { text: "Humanity", truthy: false },
-      { text: "Health", truthy: true },
-      { text: "Honour", truthy: false },
-      { text: "Household", truthy: false },
-    ],
-    price: 1000000,
-  },
-];
+import QuestionInterface from "../interfaces/Question";
 
-const Game = () => {
-  const [curQuestion, setCurQuestion] = useState(0);
+interface GameProps {
+  questions: Array<QuestionInterface>;
+  updateScore(concatValue: number): void;
+  onGameOver(): void;
+}
+
+const Game: React.FC<GameProps> = (props) => {
+  const [curQuestion, setCurQuestion] = useState(props.questions[0]);
+
+  const answerHandler = (truthy: boolean) => {
+    setTimeout(() => {
+      if (truthy) {
+        props.updateScore(curQuestion.price);
+        setCurQuestion(
+          props.questions[props.questions.indexOf(curQuestion) + 1]
+        );
+      } else {
+        props.onGameOver();
+      }
+    }, 1000);
+  };
+
+  const menuStateNormalizer = () => {
+    return props.questions.map((item, index) => {
+      let state;
+      const questionIndex = props.questions.indexOf(curQuestion);
+      if (index < questionIndex) {
+        state = HexagonWrapperState.completed;
+      } else if (index > questionIndex) {
+        state = HexagonWrapperState.uncompleted;
+      } else {
+        state = HexagonWrapperState.current;
+      }
+      return { value: item.price, state: state };
+    });
+  };
 
   return (
     <div className="game grid-x-center">
-      <QuestionsCard question={questions[curQuestion]} />
-      <MenuGame />
+      <QuestionsCard question={curQuestion} onAnswer={answerHandler} />
+      <MenuGame menuState={menuStateNormalizer()} />
     </div>
   );
 };
