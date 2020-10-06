@@ -15,8 +15,10 @@
     "react/jsx-filename-extension": 0,
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/no-var-requires": 0,
-    "@typescript-eslint/quotes": [2, "prefer-double"]
+    "@typescript-eslint/no-var-requires": 0
+    // "@typescript-eslint/quotes": [2, "prefer-double"]
+    // "jsx-quotes": ["error", "prefer-double"]
+    // "no-unused-vars": [2, { "vars": "all", "args": "after-used" }]
   },
   "settings": {
     "import/parsers": {

@@ -159,7 +159,7 @@
 @media screen and (min-width: 1024px) {
   .menu-game .hexagon svg:nth-child(1) {
     height: 0.3rem;
-    width: 3.415rem;
+    width: 6.415rem;
   }
 
   .menu-game .hexagon svg:nth-child(2) {
@@ -168,7 +168,7 @@
 
   .menu-game .hexagon svg:nth-child(3) {
     height: 0.3rem;
-    width: 3.415rem;
+    width: 6.415rem;
   }
 }
 

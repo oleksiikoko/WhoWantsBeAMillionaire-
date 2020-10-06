@@ -1,29 +1,37 @@
-const TerserPlugin = require('terser-webpack-plugin');
-const webpack = require('webpack');
+const TerserPlugin = require("terser-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
-  entry: ['./src/index.tsx'],
+  entry: ["./src/index.tsx"],
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ["babel-loader"],
       },
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: "ts-loader",
         exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack"],
       },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".tsx", ".ts", ".js"],
   },
   output: {
     path: `${__dirname}/public`,
-    publicPath: '/',
-    filename: 'app.min.js',
+    publicPath: "/",
+    filename: "app.min.js",
   },
   optimization: {
     minimizer: [new TerserPlugin()],
