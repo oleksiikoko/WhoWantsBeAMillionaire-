@@ -4,7 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   /* height: 30%; */
-  height: 20rem;
+  /* height: 20rem; */
 }
 
 .options--inactive .hexagon--inactive:hover svg path {
@@ -37,7 +37,7 @@
     margin-top: 9rem;
   }
   .options span {
-    width: 40rem;
+    width: 100vw;
     flex: auto;
   }
   .options span:nth-child(odd) {
@@ -47,27 +47,51 @@
 
 @media screen and (max-width: 425px) {
   .options {
-    flex-direction: column;
-    flex-wrap: nowrap;
     margin-top: 7rem;
   }
   .options span {
     width: 24rem;
-    flex: auto;
   }
-  .options span:nth-child(odd) {
-    flex: auto;
+}
+
+@media screen and (max-width: 375px) {
+  .options {
+    margin-top: 7rem;
+  }
+  .options span {
+    width: 24rem;
   }
 }
 
 @media screen and (max-width: 320px) {
+  .options {
+    margin-top: 2.7rem;
+  }
+  .options span {
+    width: 17rem;
+    margin-bottom: 0.1rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
 }
 
 @media screen and (min-width: 1440px) {
+  .options {
+    max-width: 70rem;
+  }
+  .options span {
+    width: 50em;
+    margin-bottom: 0.1rem;
+  }
 }
 
 @media screen and (min-width: 2560px) {
+  .options {
+    max-width: 90rem;
+  }
+  .options span {
+    width: 45rem;
+    margin-bottom: 0.1rem;
+  }
 }

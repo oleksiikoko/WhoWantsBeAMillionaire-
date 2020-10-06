@@ -1,12 +1,13 @@
 #question-card {
   height: 100%;
+  /* width: ; */
 }
 
 .question-card {
   position: relative;
   padding: 3rem;
   height: 100vh;
-  width: 100%;
+  width: 70vw;
   justify-content: center;
   align-items: center;
   background-color: var(--gray-90);
@@ -31,10 +32,14 @@
 }
 
 @media screen and (max-width: 768px) {
+  .question-card {
+    padding: 0;
+    width: 100vw;
+  }
   .question-card > h1 {
-    margin-bottom: 3.5rem;
-    max-width: 36rem;
-    font-size: 2rem;
+    margin-bottom: 4.3rem;
+    max-width: 40rem;
+    font-size: 2.7rem;
     text-align: center;
   }
 
@@ -55,16 +60,12 @@
     right: 3rem;
   }
   .question-card span svg {
-    height: 2.5rem;
+    height: 3rem;
   }
   /* ------------ */
 }
 
 @media screen and (max-width: 425px) {
-  .question-card {
-    padding: 0;
-    width: 100vw;
-  }
   .question-card > h1 {
     margin-bottom: 3.5rem;
     max-width: 24rem;
@@ -73,11 +74,33 @@
 
   /* menu icon */
   .question-card > span {
-    top: 2rem;
+    top: 3rem;
     right: 2rem;
   }
   .question-card span svg {
-    height: 2.5rem;
+    height: 2rem;
+  }
+  /* ------------ */
+}
+
+@media screen and (max-width: 375px) {
+  .question-card {
+    padding: 0;
+    width: 100vw;
+  }
+  .question-card > h1 {
+    margin-bottom: 3.5rem;
+    max-width: 20rem;
+    font-size: 1.6rem;
+  }
+
+  /* menu icon */
+  .question-card > span {
+    top: 2rem;
+    right: 2.5rem;
+  }
+  .question-card span svg {
+    height: 1.7rem;
   }
   /* ------------ */
 }
@@ -89,14 +112,14 @@
   }
   .question-card > h1 {
     margin-bottom: 2rem;
-    max-width: 17rem;
-    font-size: 1.4rem;
+    max-width: 16rem;
+    font-size: 1.5rem;
   }
 
   /* menu icon */
   .question-card > span {
-    top: 1rem;
-    right: 1rem;
+    top: 2rem;
+    right: 2.5rem;
   }
   .question-card span svg {
     height: 1.7rem;
@@ -105,10 +128,26 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .question-card {
+    padding: 0;
+  }
+  .question-card > h1 {
+    margin-bottom: 14rem;
+    max-width: 40rem;
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .question-card > h1 {
+    max-width: 54rem;
+    font-size: 2.7rem;
+  }
 }
 
 @media screen and (min-width: 2560px) {
+  .question-card > h1 {
+    max-width: 90rem;
+    font-size: 4.3rem;
+  }
 }

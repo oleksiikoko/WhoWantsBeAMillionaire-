@@ -2,7 +2,6 @@
 
 .hexagon {
   position: relative;
-  width: min-content;
   justify-content: center;
   margin: 0;
 }
@@ -64,10 +63,6 @@
   color: var(--orange-100);
 }
 
-/* .hexagon--uncompleted svg path {
-  stroke: var(--black-100);
-} */
-
 .hexagon--uncompleted {
   color: var(--black-100);
 }
@@ -84,7 +79,7 @@
     width: 1rem;
   }
   .hexagon svg:nth-child(2) {
-    height: 7rem;
+    height: 7.3rem;
   }
   .hexagon svg:nth-child(3) {
     height: 0.3rem;
@@ -94,7 +89,7 @@
   .hexagon__content {
     position: absolute;
     top: 1.7rem;
-    left: 5.1rem;
+    left: 8.7rem;
   }
 }
 
@@ -104,8 +99,19 @@
   }
 
   .hexagon__content {
-    top: 0.6rem;
+    top: 0.8rem;
     left: 3.4rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .hexagon svg:nth-child(2) {
+    height: 4rem;
+  }
+
+  .hexagon__content {
+    top: 0.9rem;
+    left: 3.9rem;
   }
 }
 
@@ -115,16 +121,36 @@
   }
 
   .hexagon__content {
-    top: 0.8rem;
-    left: 5.8rem;
+    top: 0.6rem;
+    left: 3.1rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  .hexagon__content {
+    top: 1.2rem;
+    left: 3.1rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
+  .hexagon svg:nth-child(2) {
+    height: 5rem;
+  }
+
+  .hexagon__content {
+    top: 1.1rem;
+    left: 7.1rem;
+  }
 }
 
 @media screen and (min-width: 2560px) {
+  .hexagon svg:nth-child(2) {
+    height: 11rem;
+  }
+
+  .hexagon__content {
+    top: 2.8rem;
+    left: 6.1rem;
+  }
 }
