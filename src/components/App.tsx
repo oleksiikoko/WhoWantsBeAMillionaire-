@@ -23,6 +23,7 @@ export default function App({ name }: AppProps) {
   const [gameScore, setGameScore] = useState(0);
 
   const startGame = () => {
+    setGameScore(0);
     setGameState(GamePage.game);
   };
 

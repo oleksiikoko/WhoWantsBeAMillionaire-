@@ -20,12 +20,10 @@ interface GameProps {
 const Game: React.FC<GameProps> = (props) => {
   const [curQuestion, setCurQuestion] = useState(props.questions[0]);
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  console.log(correctAnswers);
+  const [block, setBlock] = useState(false);
   const getCountCorrectAnswers = () => {
     return curQuestion.answers.filter((item) => item.truthy === true).length;
   };
-  console.log(getCountCorrectAnswers());
-  const [block, setBlock] = useState(false);
 
   const answerHandler = (truthy: boolean) => {
     if (correctAnswers === getCountCorrectAnswers()) setBlock(true);
