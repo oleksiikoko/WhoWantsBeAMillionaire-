@@ -20,10 +20,11 @@ interface GameProps {
 const Game: React.FC<GameProps> = (props) => {
   const [curQuestion, setCurQuestion] = useState(props.questions[0]);
   const [correctAnswers, setCorrectAnswers] = useState(0);
-
+  console.log(correctAnswers);
   const getCountCorrectAnswers = () => {
     return curQuestion.answers.filter((item) => item.truthy === true).length;
   };
+  console.log(getCountCorrectAnswers());
   const [block, setBlock] = useState(false);
 
   const answerHandler = (truthy: boolean) => {
@@ -35,8 +36,10 @@ const Game: React.FC<GameProps> = (props) => {
           setCurQuestion(
             props.questions[props.questions.indexOf(curQuestion) + 1]
           );
+          setCorrectAnswers(0);
+        } else {
+          setCorrectAnswers(correctAnswers + 1);
         }
-        setCorrectAnswers(correctAnswers + 1);
       } else {
         props.onGameOver();
       }
