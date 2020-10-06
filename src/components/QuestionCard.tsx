@@ -26,9 +26,6 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
       .getElementById("question-card")!
       .classList.remove("question-card--show");
   };
-  useEffect(() => {
-    onShowMenu();
-  }, []);
   return (
     <div id="question-card">
       <div className="question-card  grid-y-center">
