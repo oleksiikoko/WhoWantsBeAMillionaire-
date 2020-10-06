@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import HexagonWrapper, {
   HexagonWrapperState,
@@ -19,14 +19,24 @@ interface GameProps {
 
 const Game: React.FC<GameProps> = (props) => {
   const [curQuestion, setCurQuestion] = useState(props.questions[0]);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
+
+  const getCountCorrectAnswers = () => {
+    return curQuestion.answers.filter((item) => item.truthy === true).length;
+  };
+  const [block, setBlock] = useState(false);
 
   const answerHandler = (truthy: boolean) => {
+    if (correctAnswers === getCountCorrectAnswers()) setBlock(true);
     setTimeout(() => {
       if (truthy) {
-        props.updateScore(curQuestion.price);
-        setCurQuestion(
-          props.questions[props.questions.indexOf(curQuestion) + 1]
-        );
+        if (getCountCorrectAnswers() === correctAnswers + 1) {
+          props.updateScore(curQuestion.price);
+          setCurQuestion(
+            props.questions[props.questions.indexOf(curQuestion) + 1]
+          );
+        }
+        setCorrectAnswers(correctAnswers + 1);
       } else {
         props.onGameOver();
       }
@@ -50,7 +60,11 @@ const Game: React.FC<GameProps> = (props) => {
 
   return (
     <div className="game grid-x-center">
-      <QuestionsCard question={curQuestion} onAnswer={answerHandler} />
+      <QuestionsCard
+        question={curQuestion}
+        onAnswer={answerHandler}
+        block={block}
+      />
       <MenuGame menuState={menuStateNormalizer()} />
     </div>
   );

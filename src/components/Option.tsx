@@ -7,7 +7,7 @@ interface OptionProps {
   letter: string;
   text: string;
   truthy: boolean;
-  onClick?(truthy: boolean): void;
+  onClick(truthy: boolean): void;
   state: HexagonWrapperState;
 }
 

@@ -9,6 +9,7 @@ import "../styles/options.css";
 interface OptionsProps {
   answers: Array<AnswerInterface>;
   onChosen(truthy: boolean): void;
+  block: boolean;
 }
 
 const Options: React.FC<OptionsProps> = (props) => {
@@ -18,27 +19,23 @@ const Options: React.FC<OptionsProps> = (props) => {
   const [optionsState, setOptionsState] = useState(cleanState());
 
   const onOptionsChosen = (index: number) => {
-    if (
-      optionsState.filter((state) => state === HexagonWrapperState.inactive)
-        .length === props.answers.length
-    ) {
-      return () => {
-        let sliceState = optionsState.slice();
-        sliceState.splice(index, 1, HexagonWrapperState.selected);
+    return () => {
+      let sliceState = optionsState.slice();
+      sliceState.splice(index, 1, HexagonWrapperState.selected);
 
-        setOptionsState(
-          sliceState.map((item) => {
-            if (item === HexagonWrapperState.inactive)
-              return HexagonWrapperState.disabled;
-            return item;
-          })
-        );
-      };
-    }
+      setOptionsState(
+        sliceState.map((item) => {
+          if (props.block && item === HexagonWrapperState.inactive)
+            return HexagonWrapperState.disabled;
+          return item;
+        })
+      );
+    };
   };
 
   const changeSelectedIfExist = () => {
     const index = optionsState.indexOf(HexagonWrapperState.selected);
+    props.answers.filter((item) => item.truthy === true).length;
 
     if (index !== -1) {
       let tempState = optionsState.slice();

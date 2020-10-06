@@ -11,6 +11,7 @@ import "../styles/questionsCard.css";
 interface QuestionCardProps {
   question: QuestionInterface;
   onAnswer(truthy: boolean): void;
+  block: boolean;
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = (props) => {
@@ -35,7 +36,11 @@ const QuestionCard: React.FC<QuestionCardProps> = (props) => {
           <MenuSvg />
         </span>
         <h1>{props.question.text}</h1>
-        <Options answers={props.question.answers} onChosen={props.onAnswer} />
+        <Options
+          answers={props.question.answers}
+          onChosen={props.onAnswer}
+          block={props.block}
+        />
       </div>
     </div>
   );
