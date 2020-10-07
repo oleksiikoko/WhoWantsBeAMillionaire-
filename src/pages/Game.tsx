@@ -31,10 +31,13 @@ const Game: React.FC<GameProps> = (props) => {
       if (truthy) {
         if (getCountCorrectAnswers() === correctAnswers + 1) {
           props.updateScore(curQuestion.price);
-          setCurQuestion(
-            props.questions[props.questions.indexOf(curQuestion) + 1]
-          );
           setCorrectAnswers(0);
+
+          props.questions.length === props.questions.indexOf(curQuestion) + 1
+            ? props.onGameOver()
+            : setCurQuestion(
+                props.questions[props.questions.indexOf(curQuestion) + 1]
+              );
         } else {
           setCorrectAnswers(correctAnswers + 1);
         }

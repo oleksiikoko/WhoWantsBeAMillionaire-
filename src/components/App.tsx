@@ -27,8 +27,8 @@ export default function App({ name }: AppProps) {
     setGameState(GamePage.game);
   };
 
-  const updateScore = (concatValue: number) => {
-    setGameScore(gameScore + concatValue);
+  const updateScore = (value: number) => {
+    setGameScore(value);
   };
 
   const gameOver = () => {
